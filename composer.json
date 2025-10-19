@@ -1,0 +1,40 @@
+{
+  "name": "robustack/sms",
+  "description": "Laravel-ready SMS manager and routing package with pluggable senders.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.0",
+    "psr/log": "^3.0",
+    "illuminate/support": "^10.0 || ^11.0 || ^12.0",
+    "giggsey/libphonenumber-for-php": "^8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Robustack\\Sms\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Robustack\\Sms\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Robustack\\Sms\\Providers\\SmsServiceProvider"
+      ],
+      "aliases": {
+        "Sms": "Robustack\\Sms\\Facades\\Sms"
+      }
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  }
+}
+
+
